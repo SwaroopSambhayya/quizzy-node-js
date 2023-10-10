@@ -5,7 +5,6 @@ const asyncHandler = require("express-async-handler");
 const getLeaderboard = asyncHandler(async (req, res) => {
     try {
       const result = await User.find().sort({ "score" : "desc"})
-      console.log(result);
       res.status(200).json(result);
     } catch (err) {
       res.status(500);
